@@ -1,101 +1,118 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
-    --fontColor: #262626;
-    --placeholderColor: rgba(38, 38, 38, 0.5);
-    --mainColor: #f58a07;
-    --complementaryColor: #f9ab55;
-    --light: #f7f5fb;
-    --InputBg: #ebebeb;
-    --radius: 16px;
-    --inputRadius: 8px;
+  --fontColor: #262626;
+  --placeholderColor: rgba(38, 38, 38, 0.5);
+  --mainColor: #f58a07;
+  --complementaryColor: #f9ab55;
+  --light: #f7f5fb;
+  --InputBg: #ebebeb;
+  --radius: 16px;
+  --inputRadius: 8px;
+  --incorrectDataBg: rgb(255, 159, 159);
+  --incorrectDataPlaceholderColor: rgba(38, 38, 38, 0.65);
+  --correctLoginBg: rgb(97, 238, 97);
 }
 
 body {
-    /* From bgjar.com */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1042%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M603.8623249891828-33.51247090233734L578.0212387183035 41.53549293650947 703.5137276120133 42.7731404234049z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1216.4737472341787 486.1991832549863L1261.0105078738175 422.5940973207357 1143.3344986526222 387.59149932840313z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M204.676%2c416.036C242.852%2c415.94%2c277.941%2c397.559%2c298.912%2c365.659C322.402%2c329.927%2c338.78%2c283.15%2c315.699%2c247.153C293.597%2c212.683%2c245.566%2c216.525%2c204.676%2c218.689C168.87%2c220.584%2c131.727%2c227.781%2c112.298%2c257.917C91.342%2c290.421%2c90.108%2c332.741%2c109.617%2c366.134C128.966%2c399.252%2c166.32%2c416.132%2c204.676%2c416.036' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M659.1070497096968 404.23584181102916L735.4535446109055 536.4718499597208 867.6895527595971 460.125355058512 791.3430578583884 327.8893469098204z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1062.533967701616 392.7722009061188L941.9405208175633 414.03607928841046 963.2043991998551 534.629526172463 1083.7978460839074 513.3656477901714z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M764.0617556233274 18.756441073710562L661.5751594565054 82.79717399986562 725.6158923826604 185.28377016668765 828.1024885494825 121.2430372405326z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1042'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* From bgjar.com */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1042%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M603.8623249891828-33.51247090233734L578.0212387183035 41.53549293650947 703.5137276120133 42.7731404234049z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1216.4737472341787 486.1991832549863L1261.0105078738175 422.5940973207357 1143.3344986526222 387.59149932840313z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M204.676%2c416.036C242.852%2c415.94%2c277.941%2c397.559%2c298.912%2c365.659C322.402%2c329.927%2c338.78%2c283.15%2c315.699%2c247.153C293.597%2c212.683%2c245.566%2c216.525%2c204.676%2c218.689C168.87%2c220.584%2c131.727%2c227.781%2c112.298%2c257.917C91.342%2c290.421%2c90.108%2c332.741%2c109.617%2c366.134C128.966%2c399.252%2c166.32%2c416.132%2c204.676%2c416.036' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M659.1070497096968 404.23584181102916L735.4535446109055 536.4718499597208 867.6895527595971 460.125355058512 791.3430578583884 327.8893469098204z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1062.533967701616 392.7722009061188L941.9405208175633 414.03607928841046 963.2043991998551 534.629526172463 1083.7978460839074 513.3656477901714z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M764.0617556233274 18.756441073710562L661.5751594565054 82.79717399986562 725.6158923826604 185.28377016668765 828.1024885494825 121.2430372405326z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1042'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    width: clamp(300px, 25vw, 500px);
-    background-color: var(--light);
-    padding: 3%;
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
-    -moz-box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
-    box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
+  width: clamp(300px, 25vw, 500px);
+  background-color: var(--light);
+  padding: 3%;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
+  -moz-box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
+  box-shadow: 5px 5px 20px -4px rgba(38, 38, 38, 1);
 }
 
 .container h1 {
-    color: var(--fontColor);
-    margin-bottom: .8rem;
+  color: var(--fontColor);
+  margin-bottom: 0.8rem;
 }
 
-.container input {
-    width: 100%;
-    background: var(--InputBg);
-    margin: 3% 0;
-    padding: 3%;
-    font-family: 'Inter', 'FontAwesome';
-    font-size: 1.2rem;
-    outline: none; 
-    border: none;
-    border-radius: var(--inputRadius);
-    -webkit-box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
-    -moz-box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
-    box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
+.container input,
+.container button[type="submit"],
+.container button {
+  width: 100%;
+  background: var(--InputBg);
+  margin: 3% 0;
+  padding: 3%;
+  font-family: "Inter", "FontAwesome";
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: var(--inputRadius);
+  -webkit-box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
+  -moz-box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
+  box-shadow: 3px 3px 16px -9px rgba(38, 38, 38, 1);
 }
 
 .container input:not(input[type="submit"]):focus {
-    outline: 2px solid var(--mainColor);
+  outline: 2px solid var(--mainColor);
 }
 
 .container input::placeholder {
-    color: var(--placeholderColor);
+  color: var(--placeholderColor);
+}
+
+.container input.incorrect-data {
+  background: var(--incorrectDataBg);
+  transition: background 300ms ease;
+}
+
+.container button[type="submit"].correctLogin {
+    background: var(--correctLoginBg);
+    transition: background 300ms ease;
 }
 
 .password {
-    position: relative;
+  position: relative;
 }
 
 .show-password {
-    position: absolute;
-    background: var(--InputBg);
-    top: 50%;
-    right: 3%;
-    z-index: 1;
-    border: none;
-    padding: 3%;
-    color: var(--placeholderColor);
-    transform: translateY(-50%);
-    cursor: pointer;
+  position: absolute;
+  background: var(--InputBg);
+  top: 50%;
+  right: 3%;
+  z-index: 1;
+  border: none;
+  padding: 3%;
+  color: var(--placeholderColor);
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
-.container input[type="submit"] {
-    background: var(--mainColor);
-    margin-top: 8%;
-    color: var(--light);
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity .4s ease;
+.container button[type="submit"],
+.container button {
+  background: var(--mainColor);
+  margin-top: 8%;
+  color: var(--light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
 }
 
-.container input[type="submit"]:focus {
-    outline: 2px solid var(--InputBg);
+.container button[type="submit"]:focus {
+  outline: 2px solid var(--InputBg);
 }
 
-.container input[type="submit"]:hover {
-    opacity: .8;
+.container button[type="submit"]:hover,
+.container button:hover {
+  opacity: 0.8;
 }
